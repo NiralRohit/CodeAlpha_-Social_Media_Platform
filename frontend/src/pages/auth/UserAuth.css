@@ -7,13 +7,10 @@ body
 {
     width: 100%;
     min-height: calc(100vh - 107.23px);
-    background-image: url("../../assets/illustrations/auth-background.jpg");
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+    background-color: #f5f5f5;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .user-auth-content-container
@@ -21,12 +18,14 @@ body
     min-height: 110%;
     width: fit-content;
     padding: 2rem;
-    margin-left: 2rem;
+    margin: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    color: var(--royal-blue);
-    border-radius: 6px;
+    color: #2c3e50;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .user-auth-form
@@ -87,7 +86,7 @@ body
 }
 
 .links-with-blue-underline, .links-with-blue-underline:visited, .links-with-blue-underline:hover, .links-with-blue-underline:active {
-    color: var(--royal-blue);
+    color: #e74c3c;
 }
 
 .links-with-blue-underline::after
@@ -96,7 +95,7 @@ body
     display: block;
     width: 0px;
     height: 2px;
-    background: var(--royal-blue);
+    background: #e74c3c;
     transition: width .3s;
 }
 

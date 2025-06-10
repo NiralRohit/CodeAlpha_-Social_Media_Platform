@@ -48,7 +48,7 @@ function Login()
         .then(res => {
             if(res.data.user)
             {
-                localStorage.setItem('socioztron-user-token',res.data.user)
+                localStorage.setItem('socialzone-user-token',res.data.user)
                 let loggedInUserDetails = jwt_decode(res.data.user)
                 let updatedUserDetails = {
                     loggedInUserId: loggedInUserDetails._id,
@@ -76,14 +76,14 @@ function Login()
     function loginGuestUser(event, guestUserNumber)
     {
         event.preventDefault();
-        let guestUserEmail = guestUserNumber===1?'newuser1001@gmail.com':'johnwick2@gmail.com';
+        let guestUserEmail = guestUserNumber===1?'rahul.sharma@gmail.com':'priya.patel@gmail.com';
         let guestUserPassword = 'Zxcv123*';
 
         loginUser({userEmail: guestUserEmail,userPassword: guestUserPassword})
         .then(res => {
             if(res.data.user)
             {
-                localStorage.setItem('socioztron-user-token',res.data.user)
+                localStorage.setItem('socialzone-user-token',res.data.user)
                 let loggedInUserDetails = jwt_decode(res.data.user)
                 let updatedUserDetails = {
                     loggedInUserId: loggedInUserDetails._id,
@@ -162,8 +162,8 @@ function Login()
                 <button type="submit" className="solid-success-btn form-user-auth-submit-btn">Login</button>
                 
                 <div className="guest-user-auth-container">
-                    <button className="solid-primary-btn" onClick={(event)=> {loginGuestUser(event,1)}}>Guest User 1</button>
-                    <button className="solid-primary-btn" onClick={(event)=> {loginGuestUser(event,2)}}>Guest User 2</button>
+                    <button className="solid-primary-btn" onClick={(event)=> {loginGuestUser(event,1)}}>Rahul Sharma</button>
+                    <button className="solid-primary-btn" onClick={(event)=> {loginGuestUser(event,2)}}>Priya Patel</button>
                 </div>
 
                 <div className="new-user-container">

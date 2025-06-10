@@ -31,7 +31,7 @@ function Explore()
                 dispatch(updateHomeFeed(updatedHomeFeed.data.homefeed))
             })()
         }
-    },[])
+    },[homeFeed.length, dispatch])
 
     return (
         <div className='page-container'>
@@ -65,22 +65,22 @@ function Explore()
 
                         <ActiveContacts
                             imgSrc="https://raw.githubusercontent.com/Naman-Saxena1/Enztron-Component_Library/development/Icons-and-Images/Avatars/640x426-image-avatar.jpg"
-                            userName="Alexa"
-                            userEmail="newuser1@gmail.com"
+                            userName="Anita Singh"
+                            userEmail="anita.singh@gmail.com"
                             userProfilePic="https://raw.githubusercontent.com/Naman-Saxena1/Enztron-Component_Library/development/Icons-and-Images/Avatars/1920x1280-image-avatar.jpg"
                         />
 
                         <ActiveContacts
                             imgSrc="https://raw.githubusercontent.com/Naman-Saxena1/Enztron-Component_Library/development/Icons-and-Images/Avatars/pexels-andrea-piacquadio-3978586.jpg"
-                            userName="Jane"
-                            userEmail="newuser2@gmail.com"
+                            userName="Ananya Sharma"
+                            userEmail="ananya.sharma@gmail.com"
                             userProfilePic="https://raw.githubusercontent.com/Naman-Saxena1/Enztron-Component_Library/development/Icons-and-Images/Avatars/pexels-andrea-piacquadio-3978586.jpg"
                         />
 
                         <ActiveContacts
                             imgSrc="https://raw.githubusercontent.com/Naman-Saxena1/Enztron-Component_Library/development/Icons-and-Images/Avatars/pexels-burst-374044.jpg"
-                            userName="Max"
-                            userEmail="newuser3@gmail.com"
+                            userName="Vikram Patel"
+                            userEmail="vikram.patel@gmail.com"
                             userProfilePic="https://raw.githubusercontent.com/Naman-Saxena1/Enztron-Component_Library/development/Icons-and-Images/Avatars/pexels-burst-374044.jpg"
                         />
 

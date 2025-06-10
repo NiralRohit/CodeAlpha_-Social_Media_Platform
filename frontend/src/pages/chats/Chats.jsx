@@ -25,7 +25,7 @@ import loginLottie from "../../assets/lottie/authentication.json"
 import io from "socket.io-client"
 import './Chats.css'
 
-const ENDPOINT = "https://socioztron.co.in";
+const ENDPOINT = "https://socialzone.co.in";
 var socket, currentlyOpenedChatCompare, hasUserJoined= false;
 
 function Chats()
@@ -48,7 +48,7 @@ function Chats()
         {
             window.scrollTo(0, 0);
         }
-    }, [pathname]);
+    }, [pathname, userLoggedIn]);
 
     const userDetails = useSelector(state => state.userDetailsReducer)
     const {
@@ -64,7 +64,6 @@ function Chats()
     } = useChatModal()
 
     useEffect(()=>{
-         
         if(userLoggedIn)
         {
             (async()=>{
@@ -100,7 +99,7 @@ function Chats()
                 behavior: 'smooth'
             });
         }  
-    },[])
+    },[userLoggedIn, loggedInUserEmail, userDetails, setCurrentUserChatData])
 
     useEffect(()=>{
         const chatWindow = document.querySelector('.chat-window-container')  
@@ -112,7 +111,7 @@ function Chats()
             });
             currentlyOpenedChatCompare = currentlyOpenedChat      
         }  
-    },[currentlyOpenedChat])
+    },[currentlyOpenedChat, userLoggedIn])
 
     useEffect(() => {
         socket.on("message received", (newReceivedMessage) => {
@@ -143,7 +142,7 @@ function Chats()
         return () => {
             socket.off("message received");
         };
-    });
+    }, [setCurrentUserChatData]);
 
     async function openChatHandler(chat)
     {
@@ -210,7 +209,7 @@ function Chats()
 
             setCurrentUserChatData(prevState => {
                 let newState = prevState.map(chatInfo=>{
-                    if(chatInfo._id == currentlyOpenedChat._id)
+                    if(chatInfo._id === currentlyOpenedChat._id)
                     {
                         chatInfo.lastMessagePreview = newMessage
                     }

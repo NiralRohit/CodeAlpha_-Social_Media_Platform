@@ -108,10 +108,10 @@ function Navbar() {
             <div className="left-topbar-container">
                 {/* <button id="top-bar-ham-menu-btn" className="icon-btn"><i className="fa fa-bars" aria-hidden="true"></i></button> */}
                 <Link to="/">
-                    <h2 className="top-bar-brand-name">Socioztron</h2>
+                    <h2 className="top-bar-brand-name">SocialZone</h2>
                 </Link>
                 <div className="search-bar">
-                    <input className="search-bar-input" placeholder="Search Socioztron"/>
+                    <input className="search-bar-input" placeholder="Search SocialZone"/>
                     <button id="search-bar-btn">
                         <i className="fa fa-search" aria-hidden="true"></i>
                     </button>
